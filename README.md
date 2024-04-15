@@ -24,3 +24,6 @@ python source/oficial.py
 ```
 El codi utilitzarà les lligues i temporades predefinides a les variables ````countries```` i ````seasons```` del fitxer **source/oficial.py**.
 El funcionament del projecte està limitat per les 5 grans lligues d'Europa (Espanya, Itàlia, Alemanya, Anglaterra i França) i per a les temporades que van des de la 2009/2010 fins a la 2023/2024. Dins d'aquests paràmetres pots modificar les variables esmentades anteriorment per provar altres escenaris.
+
+## DOI de Zenodo del dataset
+https://doi.org/10.5281/zenodo.10975068
