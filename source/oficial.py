@@ -113,7 +113,7 @@ def get_league_seasons_playerstats(pais, headers):
         # Cas especial per a Itàlia (temporada 2022/2023): obtenim l'etapa
         if temporada == '2022/2023' and pais in ('italia', 'italy'):
             stages_menu = soup_2.find(id="stages")
-            stage = stages_menu.find('option')  # Agafem la primera etapa
+            stage = stages_menu.find('option')
             url_2 = f"{global_url}{stage['value']}"
             page_3 = requests.get(url_2, headers=headers)
             soup_2 = BeautifulSoup(page_3.content, features="html.parser")
@@ -161,7 +161,7 @@ def get_page(country, season, dict_all):
     else:
         return None
 
-def write_dict_players(url, player_stats, country, season):
+def write_list_players(url, player_stats, country, season):
     """
     Aquesta funció obté les estadístiques dels jugadors d'una pàgina web i les emmagatzema en un diccionari.
 
@@ -273,14 +273,14 @@ for country in countries:
     dict_all[country] = dict_seasons_pais
 
 
-# Crea un diccionari de tots els jugadors amb les seves estadístiques
+# Crea una llista de tots els jugadors amb les seves estadístiques
 player_stats = []
 # Iterem sobre cada país de la llista i sobre cada temporada
 for country in countries:
     print("Country: ", country)
     for season in seasons:
         url = get_page(country, season, dict_all)
-        write_dict_players(url, player_stats, country, season)
+        write_list_players(url, player_stats, country, season)
         print(season)
 
 # Ecriptura del diccionari final al csv
