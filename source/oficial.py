@@ -283,7 +283,7 @@ for country in countries:
         write_list_players(url, player_stats, country, season)
         print(season)
 
-# Ecriptura del diccionari final al csv
+# Ecriptura de la llista completa de jugadors al csv
 csv_file = 'best_players.csv'
 headers = player_stats[0].keys()
 
